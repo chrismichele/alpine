@@ -2,6 +2,33 @@
 
 You can <a href="register.cfm">register for an account</a>, <a href="profile.cfm">view a profile</a>, or <a href="report.cfm">view all users</a>
 
+## Create User Table
+```markdown
+CREATE TABLE users (
+    userID int,
+    lastName varchar(255),
+    firstName varchar(255),
+    emailAddress varchar(255)
+);
+```
+
+## user.cfc
+```markdown
+<cfcomponent displayname="User Component" output="false">
+
+  <cffunction name="create" access="private" returntype="boolean">
+    <cfquery name="insertUser" datasource="alpine">
+    INSERT INTO user (firstName, lastName, emailAddress)
+    VALUES (<cfqueryparam value="#arguments.firstName#" cfsqltype="CF_SQL_VARCHAR" />,
+      <cfqueryparam value="#arguments.lastName#" cfsqltype="CF_SQL_VARCHAR" />,
+      <cfqueryparam value="#arguments.lastName#" cfsqltype="CF_SQL_VARCHAR" />)
+    </cfquery>
+  </cffunction>
+
+  
+</cfcomponent>
+```
+
 ### Register for an Account
 This is the basic code for the User Registration form.
 
@@ -9,7 +36,11 @@ This is the basic code for the User Registration form.
 <cfscript>
 if(isDefined("form.submit")){
   objUser = createObject('component','user.cfc');
-  newUser = objUser.create(firstName=form.firstName, lastName=form.lastName, emailAddress=form.emailAddress);
+  newUser = objUser.create(
+    firstName=form.firstName, 
+    lastName=form.lastName, 
+    emailAddress=form.emailAddress
+  );
 }
 </cfscript>
 
