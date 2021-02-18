@@ -1,8 +1,6 @@
-## Welcome to GitHub Pages
+## Welcome to Alpine User Registration
 
-You can use the [editor on GitHub](https://github.com/chrismichele/alpine/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+You can <a href="register.cfm">register for an account</a>, <a href="profile.cfm">view a profile</a>, or <a href="report.cfm">view all users</a>
 
 ### Markdown
 
