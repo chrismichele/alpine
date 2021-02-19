@@ -4,6 +4,10 @@ You can <a href="register.cfm">register for an account</a>, <a href="profile.cfm
 
 ## Create User Table
 ```markdown
+CREATE DATABASE alpine;
+
+USE alpine;
+
 CREATE TABLE users (
     userID int,
     lastName varchar(255),
